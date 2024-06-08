@@ -4,8 +4,9 @@
 
 #define DEFAULT     0
 #define SYMBOLS     1
-#define FN          2
-#define BT          3
+#define NUMBERS     2
+#define FN          3
+#define BT          4
 
 
 / {
@@ -13,7 +14,7 @@
             tt: this_or_that {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                tapping-term-ms = <200>;
+                tapping-term-ms = <150>;
                 quick-tap-ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
@@ -25,28 +26,37 @@
 
         default_layer {
             bindings = <
-                &kp Q       &kp W       &kp F       &kp P           &kp B                                               &kp J           &kp L       &kp U           &kp Y       &tt SQT LBKT
-                &kp A       &kp R       &kp S       &kp T           &tt LCTRL G                                         &tt LCTRL M     &kp N       &kp E           &kp I       &tt SEMI O
-                &kp Z       &kp X       &kp C       &kp D           &kp V                                               &kp K           &kp H       &kp COMMA       &kp DOT     &kp FSLH
-                                        &mo BT      &kp LGUI        &mt LSHFT SPACE &lt SYMBOLS SPACE       &lt FN RETURN &mt RSHIFT BSPC &mt RALT DEL&to SYMBOLS
+                &kp Q       &kp W       &kp E       &kp R           &kp T                                               &kp Y           &kp U       &kp I           &kp O       &tt LBKT P
+                &kp A       &kp S       &kp D       &kp F           &kp G                                               &kp H           &kp J       &kp K           &kp L       &tt SQT SEMI 
+                &mt LCTRL Z &kp X       &kp C       &kp V           &kp B                                               &kp N           &kp M       &kp COMMA       &kp DOT     &mt RCTRL FSLH
+                                        &kp ESC     &kp LGUI        &lt SYMBOLS SPACE&mt LSHFT TAB    &mt RSHIFT RETURN &kp BSPC        &lt FN DEL  &to NUMBERS
             >;
         };
 
         symbols_layer {
             bindings = <
-                &kp ESC     &kp LS(N1)  &kp LS(N2)  &kp BACKSLASH   &kp LS(PLUS)                                        &kp LS(N6)      &kp N7       &kp N8         &kp N9      &kp LS(N7)
-                &kp RA(N8)  &kp RA(N9)  &kp RA(N7)  &kp RA(N0)      &kp RA(NUBS)                                        &kp FSLH        &kp N4       &kp N5         &kp N6      &kp LS(BACKSLASH)
-                &kp NUBS    &kp LS(NUBS)&kp LS(N8)  &kp LS(N9)      &kp LS(MINUS)                                       &kp MINUS       &kp N1       &kp N2         &kp N3      &kp LS(N0)
-                                        &to DEFAULT &kp LALT        &lt FN SPACE     &trans                &kp TAB      &trans          &kp N0       &to FN
+                &kp LS(N1)  &kp RA(N2)  &kp RA(N7)  &kp RA(N0)      &kp LS(N5)                                          &kp LS(N0)      &kp LS(PLUS) &kp LS(BSLH)   &kp RBKT    &kp LBKT
+                &kp LS(N3)  &kp RA(N4)  &kp LS(N8)  &kp LS(N9)      &kp LS(N2)                                          &kp RA(NUBS)    &kp MINUS    &kp LS(N7)     &kp LS(RBKT)&kp SQT
+                &kp NUBS    &kp LS(NUBS)&kp RA(N8)  &kp RA(N9)      &kp BSLH                                            &kp LS(N6)      &kp BSLH     &kp RA(NUBS)   &kp RA(RBKT)&kp BSPC
+                                        &to DEFAULT &kp LALT        &kp SPACE        &trans                &trans       &trans          &trans       &to FN
+            >;
+        };
+
+        numbers_layer {
+            bindings = <
+                &kp LS(PLUS)&trans      &trans      &trans          &trans                                              &trans          &kp N7       &kp N8         &kp N9      &kp LBKT
+                &caps_word  &trans      &trans      &trans          &trans                                              &trans          &kp N4       &kp N5         &kp N6      &kp SQT
+                &trans      &trans      &trans      &trans          &trans                                              &trans          &kp N1       &kp N2         &kp N3      &trans
+                                        &to DEFAULT &kp LALT        &lt FN SPACE     &trans                &trans       &trans          &kp N0       &to FN
             >;
         };
         
         fn_layer {
             bindings = <
-                &trans      &trans      &trans      &trans          &trans                                              &trans          &kp LS(RBKT) &kp RA(RBKT)   &kp RBKT    &trans
-                &trans      &trans      &trans      &trans          &trans                                              &trans          &kp LEFT     &kp DOWN       &kp UP      &kp RIGHT
+                &trans      &kp C_MUTE  &kp C_VOL_DN&kp C_VOL_UP    &trans                                              &trans          &trans       &trans         &trans      &trans
+                &trans      &kp C_PREV  &kp C_PP    &kp c_NEXT      &trans                                              &kp LEFT        &kp DOWN     &kp UP         &kp RIGHT   &trans
                 &trans      &trans      &trans      &trans          &trans                                              &trans          &kp HOME     &kp END        &kp INS     &trans
-                                        &to DEFAULT &trans          &trans          &trans                  &trans      &trans          &trans       &to BT
+                                        &to DEFAULT &trans          &trans           &trans                &trans       &trans          &trans       &to BT
             >;
         };
 
