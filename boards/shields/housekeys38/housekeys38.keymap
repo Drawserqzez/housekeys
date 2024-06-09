@@ -14,7 +14,7 @@
             tt: this_or_that {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
-                tapping-term-ms = <125>;
+                tapping-term-ms = <135>;
                 quick-tap-ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
@@ -35,8 +35,8 @@
 
         symbols_layer {
             bindings = <
-                &kp LS(N1)  &kp RA(N2)  &kp RA(N7)  &kp RA(N0)      &kp LS(N5)                                          &kp LS(N0)      &kp LS(MINUS)&kp LS(BSLH)   &kp RBKT    &kp LBKT
-                &kp LS(N3)  &kp RA(N4)  &kp LS(N8)  &kp LS(N9)      &kp LS(N2)                                          &kp RA(NUBS)    &kp MINUS    &kp LS(N7)     &kp LS(RBKT)&kp SQT
+                &kp LS(N1)  &kp RA(N2)  &kp RA(N7)  &kp RA(N0)      &kp LS(N5)                                          &kp RA(NUBS)    &kp LS(MINUS)&kp LS(BSLH)   &kp RBKT    &kp LBKT
+                &kp LS(N3)  &kp RA(N4)  &kp LS(N8)  &kp LS(N9)      &kp LS(N2)                                          &kp LS(N0)      &kp MINUS    &kp LS(N7)     &kp LS(RBKT)&kp SQT
                 &kp NUBS    &kp LS(NUBS)&kp RA(N8)  &kp RA(N9)      &kp BSLH                                            &kp LS(N6)      &kp BSLH     &kp RA(NUBS)   &kp RA(RBKT)&kp BSPC
                                         &to DEFAULT &trans          &trans           &trans                &trans       &trans          &trans       &to FN
             >;
