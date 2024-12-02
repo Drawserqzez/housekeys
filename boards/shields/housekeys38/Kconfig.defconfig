@@ -1,7 +1,7 @@
 if SHIELD_HOUSEKEYS38_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "housekeys38"
+    default "algokeys38"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y

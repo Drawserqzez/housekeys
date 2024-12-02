@@ -1,6 +1,6 @@
 file_format: "1"
-id: housekeys38
-name: housekeys38
+id: algokeys38
+name: algokeys38
 type: shield
 url: https://github.com/Drawserqzez/housekeys/
 requires: [pro_micro]
